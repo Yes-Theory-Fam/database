@@ -1,0 +1,13 @@
+name: 'Package Publish'
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # TODO
+#      - - name: NPM Publish
+#          uses: JS-DevTools/npm-publish@v1

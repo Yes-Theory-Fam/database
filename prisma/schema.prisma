@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider           = "typegraphql-prisma"
+  output             = "../src/__generated__/type-graphql"
+  emitTranspiledCode = true
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("PRISMA_DATABASE_URL")
+}
+
+model birthday {
+  userid    String   @id
+  birthdate DateTime @db.Timestamptz(6)
+  timezone  String?
+}
+
+model blog {
+  id           Int     @id @default(autoincrement())
+  title_image  String  @db.VarChar
+  title        String  @db.VarChar
+  author_id    String  @db.VarChar
+  read_time    Int
+  blog_content String  @db.VarChar
+  preview_id   String  @unique @db.VarChar
+  isPublic     Boolean @default(false)
+  author_name  String  @db.VarChar
+}
+
+model buddy_project_entry {
+  user_id             String    @id
+  matched             Boolean
+  discord_user        Boolean
+  buddy_id            String?
+  matched_date        DateTime? @db.Timestamptz(6)
+  reported_ghost_date DateTime? @db.Timestamptz(6)
+}
+
+model channel_toggle {
+  id        Int      @id @default(autoincrement())
+  channel   String
+  emoji     String
+  messageId String?  @db.VarChar
+  message   message? @relation(fields: [messageId], references: [id])
+
+  @@unique([emoji, messageId], name: "IDX_886c4545692691c28e48cb964f")
+}
+
+model daily_challenge {
+  id        Int      @id @default(autoincrement())
+  result    String   @db.VarChar
+  last_used DateTime @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6)
+}
+
+model deadchat_question {
+  id        Int      @id @default(autoincrement())
+  question  String   @db.VarChar
+  last_used DateTime @default(dbgenerated("'2021-05-18 15:22:29.5'::timestamp without time zone")) @db.Timestamp(6)
+}
+
+model group_member {
+  id                              String                            @id @db.VarChar
+  user_group_members_group_member user_group_members_group_member[]
+}
+
+model message {
+  id             String           @id @db.VarChar
+  channel        String?
+  channel_toggle channel_toggle[]
+}
+
+model photowall_entry {
+  id        Int     @id @default(autoincrement())
+  fileId    String  @db.VarChar
+  published Boolean
+}
+
+model reaction_role {
+  id         Int    @id @default(autoincrement())
+  message_id String @db.VarChar
+  channel_id String @db.VarChar
+  reaction   String @db.VarChar
+  role_id    String @db.VarChar
+
+  @@unique([message_id, channel_id, reaction], name: "IDX_9a7f4eb4ad5822073b7454344b")
+}
+
+model someone_user {
+  id   String   @id @db.VarChar
+  time DateTime @db.Timestamptz(6)
+}
+
+model testimonial {
+  id           Int    @id @default(autoincrement())
+  content      String @db.VarChar
+  display_name String @db.VarChar
+}
+
+model topic {
+  id      Int      @id @default(autoincrement())
+  topic   String   @db.VarChar
+  channel String   @db.VarChar
+  created DateTime @default(dbgenerated("'2021-05-18 15:22:33.654'::timestamp without time zone")) @db.Timestamp(6)
+}
+
+model user_group {
+  id                              Int                               @id @default(autoincrement())
+  name                            String
+  description                     String
+  last_used                       DateTime                          @default(dbgenerated("('2021-05-18 17:22:42.549871'::timestamp without time zone - '01:00:00'::interval)")) @db.Timestamp(6)
+  cooldown                        Int                               @default(60)
+  user_group_members_group_member user_group_members_group_member[]
+}
+
+model user_group_members_group_member {
+  userGroupId   Int
+  groupMemberId String       @db.VarChar
+  group_member  group_member @relation(fields: [groupMemberId], references: [id])
+  user_group    user_group   @relation(fields: [userGroupId], references: [id])
+
+  @@id([userGroupId, groupMemberId])
+  @@index([userGroupId], name: "IDX_4d5a864456d00dafe30649263e")
+  @@index([groupMemberId], name: "IDX_b21e7c86a67e5a158ef88b530b")
+}
+
+model valentine {
+  userId String    @id @db.VarChar
+  start  DateTime? @db.Timestamp(6)
+  end    DateTime? @db.Timestamp(6)
+}
+
+model voice_on_demand_mapping {
+  user_id    String @id @db.VarChar
+  channel_id String @db.VarChar
+  emoji      String @db.VarChar
+}
