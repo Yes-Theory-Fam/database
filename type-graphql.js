@@ -1,1 +1,1 @@
-export * from "src/__generated__/type-graphql";
+export * from "./src/__generated__/type-graphql";
