@@ -9,6 +9,7 @@
     "client.js",
     "index.js",
     "type-graphql.js",
+    "index.d.ts",
     "prisma"
   ],
   "dependencies": {
