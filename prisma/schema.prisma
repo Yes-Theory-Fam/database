@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Birthday {
-  userid    String   @id
+  userId    String   @id @map("userid")
   birthdate DateTime @db.Timestamptz(6)
   timezone  String?
   @@map(name: "birthday")
