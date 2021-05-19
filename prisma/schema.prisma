@@ -20,16 +20,6 @@ model Birthday {
   @@map(name: "birthday")
 }
 
-model BuddyProjectEntry {
-  user_id             String    @id
-  matched             Boolean
-  discord_user        Boolean
-  buddy_id            String?
-  matched_date        DateTime? @db.Timestamptz(6)
-  reported_ghost_date DateTime? @db.Timestamptz(6)
-  @@map(name: "buddy_project_entry")
-}
-
 model ChannelToggle {
   id        Int      @id @default(autoincrement())
   channel   String
@@ -44,38 +34,38 @@ model ChannelToggle {
 model DailyChallenge {
   id        Int      @id @default(autoincrement())
   result    String   @db.VarChar
-  last_used DateTime @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6)
+  lastUsed DateTime @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
   @@map(name: "daily_challenge")
 }
 
 model DeadchatQuestion {
   id        Int      @id @default(autoincrement())
   question  String   @db.VarChar
-  last_used DateTime @default(dbgenerated("'2021-05-18 15:22:29.5'::timestamp without time zone")) @db.Timestamp(6)
+  lastUsed DateTime @default(dbgenerated("'2021-05-18 15:22:29.5'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
   @@map(name: "deadchat_question")
 }
 
 model GroupMember {
   id                              String                            @id @db.VarChar
-  user_group_members_group_member UserGroupMembersGroupMember[]
+  userGroupMembersGroupMember UserGroupMembersGroupMember[]
   @@map(name: "group_member")
 }
 
 model Message {
   id             String           @id @db.VarChar
   channel        String?
-  channel_toggle ChannelToggle[]
+  channelToggle ChannelToggle[]
   @@map(name: "message")
 }
 
 model ReactionRole {
   id         Int    @id @default(autoincrement())
-  message_id String @db.VarChar
-  channel_id String @db.VarChar
+  messageId String @db.VarChar  @map("message_id")
+  channelId String @db.VarChar  @map("channel_id")
   reaction   String @db.VarChar
-  role_id    String @db.VarChar
+  roleId    String @db.VarChar  @map("role_id")
 
-  @@unique([message_id, channel_id, reaction], name: "IDX_9a7f4eb4ad5822073b7454344b")
+  @@unique([messageId, channelId, reaction], name: "IDX_9a7f4eb4ad5822073b7454344b")
   @@map(name: "reaction_role")
 }
 
@@ -97,17 +87,17 @@ model UserGroup {
   id                              Int                               @id @default(autoincrement())
   name                            String
   description                     String
-  last_used                       DateTime                          @default(dbgenerated("('2021-05-18 17:22:42.549871'::timestamp without time zone - '01:00:00'::interval)")) @db.Timestamp(6)
+  lastUsed                        DateTime                          @default(dbgenerated("('2021-05-18 17:22:42.549871'::timestamp without time zone - '01:00:00'::interval)")) @db.Timestamp(6) @map("last_used")
   cooldown                        Int                               @default(60)
-  user_group_members_group_member UserGroupMembersGroupMember[]
+  userGroupMembersGroupMember     UserGroupMembersGroupMember[]
   @@map(name: "user_group")
 }
 
 model UserGroupMembersGroupMember {
   userGroupId   Int
   groupMemberId String       @db.VarChar
-  group_member  GroupMember @relation(fields: [groupMemberId], references: [id])
-  user_group    UserGroup   @relation(fields: [userGroupId], references: [id])
+  groupMember  GroupMember @relation(fields: [groupMemberId], references: [id])
+  userGroup    UserGroup   @relation(fields: [userGroupId], references: [id])
 
   @@id([userGroupId, groupMemberId])
   @@index([userGroupId], name: "IDX_4d5a864456d00dafe30649263e")
@@ -123,8 +113,8 @@ model Valentine {
 }
 
 model VoiceOnDemandMapping {
-  user_id    String @id @db.VarChar
-  channel_id String @db.VarChar
+  userId    String @id @db.VarChar @map("user_id")
+  channelId String @db.VarChar @map("channel_id")
   emoji      String @db.VarChar
   @@map(name: "voice_on_demand_mapping")
 }
