@@ -1,1 +1,2 @@
-export * from "@prisma/client";
+const client = require("@prisma/client");
+module.exports = client;
