@@ -116,5 +116,7 @@ model VoiceOnDemandMapping {
   userId    String @id @db.VarChar @map("user_id")
   channelId String @db.VarChar @map("channel_id")
   emoji      String @db.VarChar
+
+  @@unique([channelId], name: "IDX_VoiceOnDemandMapping_Unique_Channel")
   @@map(name: "voice_on_demand_mapping")
 }
