@@ -47,14 +47,14 @@ model DeadchatQuestion {
 
 model GroupMember {
   id                              String                            @id @db.VarChar
-  userGroupMembersGroupMember UserGroupMembersGroupMember[]
+  userGroupMembersGroupMembers UserGroupMembersGroupMember[]
   @@map(name: "group_member")
 }
 
 model Message {
   id             String           @id @db.VarChar
   channel        String?
-  channelToggle ChannelToggle[]
+  channelToggles ChannelToggle[]
   @@map(name: "message")
 }
 
@@ -89,7 +89,7 @@ model UserGroup {
   description                     String
   lastUsed                        DateTime                          @default(dbgenerated("('2021-05-18 17:22:42.549871'::timestamp without time zone - '01:00:00'::interval)")) @db.Timestamp(6) @map("last_used")
   cooldown                        Int                               @default(60)
-  userGroupMembersGroupMember     UserGroupMembersGroupMember[]
+  userGroupMembersGroupMembers     UserGroupMembersGroupMember[]
   @@map(name: "user_group")
 }
 
