@@ -6,6 +6,8 @@ and [YesTheory.Family](https://github.com/Yes-Theory-Fam/yestheory.family).
 
 The package uses Prisma 2 as base and exports all generated code to make it available for use in the subprojects.
 
+## Peer Dependencies
+
 You are required to install two mandatory peerDependencies (dev) yourself:
 
 ```shell
@@ -14,14 +16,32 @@ yarn add -D prisma typegraphql-prisma
 npm install --save-dev prisma typegraphql-prisma
 ```
 
+## NPM Configuration
+
 It's available through [GitHub Packages](https://github.com/features/packages) and can be installed using your favorite
-package manager (if you want to install it for whatever reason):
+package manager. Note that (since it's published through the GitHub Registry) it requires a few configuration steps to
+install properly:
+
+1. Create a Personal Access Token (Settings > Developer Settings > Personal Access Token) with the scope `read:packages`
+   and make sure you have it saved somewhere.
+2. Open (or create if it doesn't exist yet) `~/.npmrc` and add the following content:
+
+```
+@yes-theory-fam:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=TOKEN
+```
+
+replacing `TOKEN` with the Access Token obtained in step 1.
+
+Once that is saved, you can install the package:
 
 ```shell
 yarn add @yestheory.family/database
 # or using npm
 npm install --save @yestheory.family/database
 ```
+
+## Package configuration
 
 This package expects the environment variable `PRISMA_DATABASE_URL` to be set to a valid PostgreSQL connection string,
 for example:
@@ -30,7 +50,8 @@ for example:
 postgresql://username:password@localhost:5432/database?schema=public
 ```
 
-The environment variable is required for the prisma commands `migrate` and `db pull`, etc.
+The environment variable is required for the prisma commands `migrate` and `db pull`, etc. and for using the package to
+access the database.
 
 ## Running prisma for this package
 
