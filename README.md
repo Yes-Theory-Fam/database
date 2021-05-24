@@ -16,6 +16,8 @@ yarn add -D prisma typegraphql-prisma
 npm install --save-dev prisma typegraphql-prisma
 ```
 
+If you also want to use the generated graphql code, you additionally need to install `type-graphql`.
+
 ## NPM Configuration
 
 It's available through [GitHub Packages](https://github.com/features/packages) and can be installed using your favorite
@@ -64,4 +66,10 @@ npm run prisma --schema node_modules/@yes-theory-fam/database/prisma/prisma.sche
 ```
 
 It is advisable to create a script in your package.json as shorthand like `db:prisma` which allows you to also
-create `db:generate` and `db:migrate` for generating the sources and migrating the database respectively. 
+create `db:generate` and `db:migrate` for generating the sources and migrating the database respectively.
+
+## Using this package
+
+Simply import `@yes-theory-fam/database` to get access to both everything generated to `@prisma/client` and all
+exported `type-graphql` code. If you don't have type-graphql installed, you have to import
+from `@yes-theory-fam/database/client` which only exports the Prisma client to avoid TypeScript errors.
