@@ -57,12 +57,22 @@ access the database.
 
 ## Running prisma for this package
 
-Since the package includes the schema, it is required to reference it with prisma's schema option:
+Since this package includes the schema, it is required to reference it with one of [prisma's schema location options](https://www.prisma.io/docs/concepts/components/prisma-schema#prisma-schema-file-location).
+
+The recommended way of doing so is adding an entry in your project's package.json:
+
+```json
+"prisma": {
+  "schema": "./node_modules/@yes-theory-fam/database/prisma/prisma.schema"
+}
+```
+
+Alternatively you can provide the location on command invocation using the `--schema` flag:
 
 ```shell
 yarn prisma --schema node_modules/@yes-theory-fam/database/prisma/prisma.schema
 # or using npm
-npm run prisma --schema node_modules/@yes-theory-fam/database/prisma/prisma.schema
+npm run prisma -- --schema node_modules/@yes-theory-fam/database/prisma/prisma.schema
 ```
 
 It is advisable to create a script in your package.json as shorthand like `db:prisma` which allows you to also
