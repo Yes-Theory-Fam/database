@@ -38,9 +38,9 @@ replacing `TOKEN` with the Access Token obtained in step 1.
 Once that is saved, you can install the package:
 
 ```shell
-yarn add @yestheory.family/database
+yarn add @yes-theory-fam/database
 # or using npm
-npm install --save @yestheory.family/database
+npm install --save @yes-theory-fam/database
 ```
 
 ## Package configuration
