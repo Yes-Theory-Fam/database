@@ -41,7 +41,7 @@ model DailyChallenge {
 model DeadchatQuestion {
   id        Int      @id @default(autoincrement())
   question  String   @db.VarChar
-  lastUsed DateTime @default(dbgenerated("'now'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
+  lastUsed DateTime @default(now()) @db.Timestamp(6) @map("last_used")
   @@map(name: "deadchat_question")
 }
 
@@ -79,7 +79,7 @@ model Topic {
   id      Int      @id @default(autoincrement())
   topic   String   @db.VarChar
   channel String   @db.VarChar
-  created DateTime @default(dbgenerated("'now'::timestamp without time zone")) @db.Timestamp(6)
+  created DateTime @default(now()) @db.Timestamp(6)
   @@map(name: "topic")
 }
 
@@ -87,7 +87,7 @@ model UserGroup {
   id                              Int                               @id @default(autoincrement())
   name                            String
   description                     String
-  lastUsed                        DateTime                          @default(dbgenerated("('now'::timestamp without time zone - '01:00:00'::interval)")) @db.Timestamp(6) @map("last_used")
+  lastUsed                        DateTime                          @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
   cooldown                        Int                               @default(60)
   userGroupMembersGroupMembers     UserGroupMembersGroupMember[]
   @@map(name: "user_group")
