@@ -63,16 +63,16 @@ The recommended way of doing so is adding an entry in your project's package.jso
 
 ```json
 "prisma": {
-  "schema": "./node_modules/@yes-theory-fam/database/prisma/prisma.schema"
+  "schema": "./node_modules/@yes-theory-fam/database/prisma/schema.prisma"
 }
 ```
 
 Alternatively you can provide the location on command invocation using the `--schema` flag:
 
 ```shell
-yarn prisma --schema node_modules/@yes-theory-fam/database/prisma/prisma.schema
+yarn prisma --schema node_modules/@yes-theory-fam/database/prisma/schema.prisma
 # or using npm
-npm run prisma -- --schema node_modules/@yes-theory-fam/database/prisma/prisma.schema
+npm run prisma -- --schema node_modules/@yes-theory-fam/database/prisma/schema.prisma
 ```
 
 It is advisable to create a script in your package.json as shorthand like `db:prisma` which allows you to also
