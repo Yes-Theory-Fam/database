@@ -1172,7 +1172,7 @@ prettysize@^2.0.0:
   resolved "https://registry.yarnpkg.com/prettysize/-/prettysize-2.0.0.tgz#902c02480d865d9cc0813011c9feb4fa02ce6996"
   integrity sha512-VVtxR7sOh0VsG8o06Ttq5TrI1aiZKmC+ClSn4eBPaNf4SHr5lzbYW+kYGX3HocBL/MfpVrRfFZ9V3vCbLaiplg==
 
-prisma@~2.25.0:
+prisma@2.25.0:
   version "2.25.0"
   resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.25.0.tgz#1ebfef3e945a22c673b3e3c5100f098da475700d"
   integrity sha512-AdAlP+PShvugljIx62Omu+eLKu6Cozz06dehmClIHSb0/yFiVnyBtrRVV4LZus+QX6Ayg7CTDvtzroACAWl+Zw==
@@ -1542,7 +1542,7 @@ type-fest@^0.8.0, type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-typegraphql-prisma@^0.14.4:
+typegraphql-prisma@0.14.4:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/typegraphql-prisma/-/typegraphql-prisma-0.14.4.tgz#c897aa0d36b0a4c2b01ee9672193b6de32bf276c"
   integrity sha512-3AC8cjBJfurDQVf6Izcttgz63IenpCTv31xf4/B3ww7fWvkoHeQ33v3bXI93tiY49/HZfA2bMEJAsV8J1BdidQ==

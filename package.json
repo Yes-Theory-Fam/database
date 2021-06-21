@@ -18,8 +18,8 @@
     "@prisma/client": "~2.25.0"
   },
   "devDependencies": {
-    "prisma": "~2.25.0",
-    "typegraphql-prisma": "^0.14.4"
+    "prisma": "2.25.0",
+    "typegraphql-prisma": "0.14.4"
   },
   "peerDependencies": {
     "prisma": "~2.25.0",
