@@ -85,7 +85,7 @@ model Topic {
 
 model UserGroup {
   id                              Int                               @id @default(autoincrement())
-  name                            String
+  name                            String                            @unique
   description                     String
   lastUsed                        DateTime                          @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
   cooldown                        Int                               @default(60)
