@@ -118,3 +118,5 @@ dist
 
 # Generated files
 src/__generated__
+
+.npmrc
