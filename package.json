@@ -22,7 +22,7 @@
     "npm": "7.19.0",
     "prisma": "2.25.0",
     "type-graphql": "1.1.1",
-    "typegraphql-prisma": "0.14.4"
+    "typegraphql-prisma": "0.14.5"
   },
   "peerDependencies": {
     "prisma": "~2.25.0",
