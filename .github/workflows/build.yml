@@ -23,6 +23,3 @@ jobs:
       # This step should prefer the cached dependencies and restore node_modules
       - name: Install dependencies
         run: yarn --immutable
-
-      - name: Build package
-        run:
