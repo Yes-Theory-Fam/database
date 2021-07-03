@@ -12,8 +12,6 @@ You are required to install two mandatory peerDependencies (dev) yourself:
 
 ```shell
 yarn add -D prisma typegraphql-prisma
-# or using npm
-npm install --save-dev prisma typegraphql-prisma
 ```
 
 If you also want to use the generated graphql code, you additionally need to install `type-graphql`.
@@ -39,8 +37,6 @@ Once that is saved, you can install the package:
 
 ```shell
 yarn add @yes-theory-fam/database
-# or using npm
-npm install --save @yes-theory-fam/database
 ```
 
 ## Package configuration
@@ -71,8 +67,6 @@ Alternatively you can provide the location on command invocation using the `--sc
 
 ```shell
 yarn prisma --schema node_modules/@yes-theory-fam/database/prisma/schema.prisma
-# or using npm
-npm run prisma -- --schema node_modules/@yes-theory-fam/database/prisma/schema.prisma
 ```
 
 It is advisable to create a script in your package.json as shorthand like `db:prisma` which allows you to also
