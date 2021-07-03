@@ -122,3 +122,4 @@ src/__generated__
 .npmrc
 
 .idea
+.wakatime-project
