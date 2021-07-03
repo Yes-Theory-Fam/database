@@ -120,3 +120,5 @@ dist
 src/__generated__
 
 .npmrc
+
+.idea

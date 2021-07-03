@@ -1,6 +1,7 @@
 generator client {
   provider = "prisma-client-js"
   binaryTargets = ["native", "linux-musl", "darwin", "windows", "debian-openssl-1.1.x", "debian-openssl-1.1.x"]
+  previewFeatures = ["referentialActions"]
 }
 
 generator typegraphql {
@@ -91,15 +92,15 @@ model UserGroup {
   lastUsed                        DateTime                          @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
   cooldown                        Int                               @default(60)
   deadtime                        Int                               @default(0)
-  userGroupMembersGroupMembers     UserGroupMembersGroupMember[]
+  userGroupMembersGroupMembers    UserGroupMembersGroupMember[]
   @@map(name: "user_group")
 }
 
 model UserGroupMembersGroupMember {
   userGroupId   Int
-  groupMemberId String       @db.VarChar
-  groupMember  GroupMember @relation(fields: [groupMemberId], references: [id])
-  userGroup    UserGroup   @relation(fields: [userGroupId], references: [id])
+  groupMemberId String          @db.VarChar
+  groupMember   GroupMember     @relation(fields: [groupMemberId], references: [id])
+  userGroup     UserGroup       @relation(fields: [userGroupId], references: [id], onDelete: Cascade)
 
   @@id([userGroupId, groupMemberId])
   @@index([userGroupId], name: "IDX_4d5a864456d00dafe30649263e")

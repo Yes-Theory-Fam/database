@@ -1,6 +1,6 @@
 {
   "name": "@yes-theory-fam/database",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "main": "index.js",
   "repository": "git://github.com/yes-theory-fam/database.git",
   "license": "MIT",
@@ -14,6 +14,9 @@
     "type-graphql.d.ts",
     "prisma"
   ],
+  "scripts": {
+    "migrate:dev": "yarn prisma migrate dev"
+  },
   "dependencies": {
     "@prisma/client": "~2.26.0"
   },
