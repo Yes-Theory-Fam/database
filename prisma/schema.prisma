@@ -123,3 +123,14 @@ model VoiceOnDemandMapping {
   @@unique([channelId], name: "IDX_VoiceOnDemandMapping_Unique_Channel")
   @@map(name: "voice_on_demand_mapping")
 }
+
+model Release {
+    id          String @id @db.Uuid @default(dbgenerated("gen_random_uuid()"))
+    releaseName String @db.VarChar @map("release_name")
+    releaseTime String @db.VarChar @map("release_time")
+    releaseTag  String @db.VarChar @map("release_tag")
+    created     DateTime @default(now()) @db.Timestamp(6)
+
+    @@index([releaseTime])
+    @@map(name: "release")
+}
