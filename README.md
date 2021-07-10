@@ -83,3 +83,14 @@ create `db:generate` and `db:migrate` for generating the sources and migrating t
 Simply import `@yes-theory-fam/database` to get access to both everything generated to `@prisma/client` and all
 exported `type-graphql` code. If you don't have type-graphql installed, you have to import
 from `@yes-theory-fam/database/client` which only exports the Prisma client to avoid TypeScript errors.
+
+### Seeding the database
+
+When using `yarn prisma db seed --preview-feature` or `yarn prisma migrate reset`, the script in `prisma/seed.js` is
+automatically run, creating the defined datasets in it.
+
+<!-- Remove this bit when https://github.com/prisma/prisma/issues/7176 is closed -->
+
+On Windows this feature doesn't work. As workaround, you can use `npx env-cmd node path/to/prisma/seed.js`. The problem
+is tracked in the [Prisma repository](https://github.com/prisma/prisma/issues/7176) and will hopefully be resolved in
+Prisma 2.27.0. 
