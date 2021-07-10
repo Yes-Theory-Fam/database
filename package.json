@@ -28,7 +28,7 @@
     "typegraphql-prisma": "0.14.6"
   },
   "peerDependencies": {
-    "prisma": "~2.25.0 || ~2.26.0",
-    "typegraphql-prisma": "^0.14.4"
+    "prisma": "~2.26.0",
+    "typegraphql-prisma": "^0.14.6"
   }
 }
