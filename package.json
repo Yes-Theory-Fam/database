@@ -18,17 +18,17 @@
     "migrate:dev": "yarn prisma migrate dev"
   },
   "dependencies": {
-    "@prisma/client": "~2.26.0"
+    "@prisma/client": "~2.27.0"
   },
   "devDependencies": {
     "install": "0.13.0",
     "npm": "7.19.1",
-    "prisma": "2.26.0",
+    "prisma": "2.27.0",
     "type-graphql": "1.1.1",
-    "typegraphql-prisma": "0.14.6"
+    "typegraphql-prisma": "0.14.7"
   },
   "peerDependencies": {
-    "prisma": "~2.26.0",
+    "prisma": "~2.26.0 || ~2.27.0",
     "typegraphql-prisma": "^0.14.6"
   }
 }
