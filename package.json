@@ -1,6 +1,6 @@
 {
   "name": "@yes-theory-fam/database",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "main": "index.js",
   "repository": "git://github.com/yes-theory-fam/database.git",
   "license": "MIT",
@@ -21,6 +21,8 @@
     "@prisma/client": "~2.27.0"
   },
   "devDependencies": {
+    "graphql": "15.5.0",
+    "graphql-fields": "2.0.3",
     "install": "0.13.0",
     "npm": "7.19.1",
     "prisma": "2.27.0",
@@ -28,7 +30,9 @@
     "typegraphql-prisma": "0.14.7"
   },
   "peerDependencies": {
-    "prisma": "~2.26.0 || ~2.27.0",
+    "graphql": "15.5.0",
+    "graphql-fields": "2.0.3",
+    "prisma": "~2.27.0",
     "typegraphql-prisma": "^0.14.6"
   }
 }

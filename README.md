@@ -80,9 +80,9 @@ create `db:generate` and `db:migrate` for generating the sources and migrating t
 
 ## Using this package
 
-Simply import `@yes-theory-fam/database` to get access to both everything generated to `@prisma/client` and all
-exported `type-graphql` code. If you don't have type-graphql installed, you have to import
-from `@yes-theory-fam/database/client` which only exports the Prisma client to avoid TypeScript errors.
+Simply import `@yes-theory-fam/database/client` to get access everything generated to `@prisma/client` and
+`@yes-theory-fam/database/type-graphql` to get all the exported `type-graphql` code. This split is done to avoid
+TypeScript errors since Prisma and TypeGraphQL generate types with identical names. 
 
 ### Seeding the database
 
