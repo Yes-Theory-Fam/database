@@ -1,6 +1,6 @@
 {
   "name": "@yes-theory-fam/database",
-  "version": "0.19.3",
+  "version": "0.20.0-bp-preview.04",
   "main": "index.js",
   "repository": "git://github.com/yes-theory-fam/database.git",
   "license": "MIT",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "graphql": "16.0.0",
     "graphql-fields": "2.0.3",
+    "graphql-scalars": "1.10.0",
     "prettier": "2.5.1",
     "prettier-plugin-prisma": "3.9.0",
     "prisma": "3.9.2",
