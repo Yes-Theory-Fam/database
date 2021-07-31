@@ -92,8 +92,16 @@ model UserGroup {
   lastUsed                        DateTime                          @default(dbgenerated("'1969-12-31 23:00:00'::timestamp without time zone")) @db.Timestamp(6) @map("last_used")
   cooldown                        Int                               @default(60)
   deadtime                        Int                               @default(0)
+  groupPingSetting                GroupPingSetting                  @default(MEMBER)
   userGroupMembersGroupMembers    UserGroupMembersGroupMember[]
   @@map(name: "user_group")
+}
+
+enum GroupPingSetting {
+  BOT
+  MODERATOR
+  OFF
+  MEMBER
 }
 
 model UserGroupMembersGroupMember {
