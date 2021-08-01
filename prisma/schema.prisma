@@ -83,6 +83,15 @@ model SomeoneUser {
   @@map(name: "someone_user")
 }
 
+model Timer {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  handlerIdentifier String   @db.VarChar
+  executeTime       DateTime @db.Timestamp(6)
+  data              Json     @db.Json
+
+  @@map(name: "timer")
+}
+
 model Topic {
   id      Int      @id @default(autoincrement())
   topic   String   @db.VarChar
