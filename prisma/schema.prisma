@@ -160,3 +160,9 @@ model Release {
   @@index([releaseTime])
   @@map(name: "release")
 }
+
+model TimedOutUsers {
+  userId String @id @db.VarChar @map("user_id")
+
+  @@map(name: "timed_out_users")
+}
