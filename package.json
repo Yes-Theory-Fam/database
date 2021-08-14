@@ -1,6 +1,6 @@
 {
   "name": "@yes-theory-fam/database",
-  "version": "0.20.1-bp-preview",
+  "version": "0.20.0-bp-preview.01",
   "main": "index.js",
   "repository": "git://github.com/yes-theory-fam/database.git",
   "license": "MIT",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "graphql": "16.0.0",
     "graphql-fields": "2.0.3",
+    "graphql-scalars": "^1.10.0",
     "install": "0.13.0",
     "npm": "8.1.4",
     "prettier": "2.5.0",
