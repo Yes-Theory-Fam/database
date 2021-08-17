@@ -15,7 +15,9 @@
     "prisma"
   ],
   "scripts": {
-    "migrate:dev": "yarn prisma migrate dev"
+    "migrate:dev": "yarn prisma migrate dev",
+    "lint": "prettier --check \"prisma/schema.prisma\"",
+    "lint:fix": "prettier --write \"prisma/schema.prisma\""
   },
   "dependencies": {
     "@prisma/client": "~2.29.0"
@@ -25,6 +27,8 @@
     "graphql-fields": "2.0.3",
     "install": "0.13.0",
     "npm": "7.21.0",
+    "prettier": "2.3.2",
+    "prettier-plugin-prisma": "^2.29.1",
     "prisma": "2.29.1",
     "type-graphql": "1.1.1",
     "typegraphql-prisma": "0.14.8"

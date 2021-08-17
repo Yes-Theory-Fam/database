@@ -162,7 +162,7 @@ model Release {
 }
 
 model TimedOutUsers {
-  userId String @id @db.VarChar @map("user_id")
+  userId String @id @map("user_id") @db.VarChar
 
   @@map(name: "timed_out_users")
 }
