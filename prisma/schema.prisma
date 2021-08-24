@@ -87,7 +87,7 @@ model Timer {
   id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   handlerIdentifier String   @db.VarChar
   executeTime       DateTime @db.Timestamp(6)
-  data              Json     @db.Json
+  data              Json?    @db.Json
 
   @@map(name: "timer")
 }
