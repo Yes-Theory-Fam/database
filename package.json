@@ -28,7 +28,7 @@
     "install": "0.13.0",
     "npm": "7.21.0",
     "prettier": "2.3.2",
-    "prettier-plugin-prisma": "^2.29.1",
+    "prettier-plugin-prisma": "2.29.1",
     "prisma": "2.29.1",
     "type-graphql": "1.1.1",
     "typegraphql-prisma": "0.14.8"
