@@ -7,7 +7,8 @@
       "matchPackageNames": [
         "prisma",
         "@prisma/client",
-        "typegraphql-prisma"
+        "typegraphql-prisma",
+        "prettier-plugin-prisma"
       ],
       "labels": [
         "renovate",
