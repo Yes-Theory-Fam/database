@@ -20,7 +20,7 @@
     "lint:fix": "prettier --write \"prisma/schema.prisma\""
   },
   "dependencies": {
-    "@prisma/client": "2.30.0"
+    "@prisma/client": "2.30.3"
   },
   "devDependencies": {
     "graphql": "15.5.1",
@@ -29,14 +29,14 @@
     "npm": "7.21.1",
     "prettier": "2.3.2",
     "prettier-plugin-prisma": "2.30.0",
-    "prisma": "2.30.0",
+    "prisma": "2.30.3",
     "type-graphql": "1.1.1",
     "typegraphql-prisma": "0.15.0"
   },
   "peerDependencies": {
     "graphql": "15.5.1",
     "graphql-fields": "2.0.3",
-    "prisma": "2.30.0",
+    "prisma": "2.30.3",
     "typegraphql-prisma": "0.15.0"
   }
 }
