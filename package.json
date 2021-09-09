@@ -27,7 +27,7 @@
     "graphql-fields": "2.0.3",
     "install": "0.13.0",
     "npm": "7.22.0",
-    "prettier": "2.3.2",
+    "prettier": "2.4.0",
     "prettier-plugin-prisma": "3.0.1",
     "prisma": "3.0.1",
     "type-graphql": "1.1.1",
