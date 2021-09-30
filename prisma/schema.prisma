@@ -179,3 +179,13 @@ model Activity {
 
   @@map(name: "activity")
 }
+
+model Currency{
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @map("user_id") @unique
+  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  ammount   Int      @default(0) @map("ammount")
+
+  @@map(name: "currency")
+}
