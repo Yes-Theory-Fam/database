@@ -166,3 +166,16 @@ model TimedOutUsers {
 
   @@map(name: "timed_out_users")
 }
+
+// The next section is for the curreny system.
+// All following models are core related to this.
+
+model Activity {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @map("user_id")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  counter   Int      @default(0) @map("counter")
+
+  @@map(name: "activity")
+}
