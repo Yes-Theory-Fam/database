@@ -23,7 +23,7 @@
     "@prisma/client": "3.1.1"
   },
   "devDependencies": {
-    "graphql": "15.6.0",
+    "graphql": "15.6.1",
     "graphql-fields": "2.0.3",
     "install": "0.13.0",
     "npm": "7.24.2",
@@ -34,7 +34,7 @@
     "typegraphql-prisma": "0.16.1"
   },
   "peerDependencies": {
-    "graphql": "15.6.0",
+    "graphql": "15.6.1",
     "graphql-fields": "2.0.3",
     "prisma": "3.1.1",
     "typegraphql-prisma": "0.16.1"
