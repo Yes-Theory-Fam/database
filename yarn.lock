@@ -2659,10 +2659,10 @@ pluralize@^8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-prettier-plugin-prisma@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-prisma/-/prettier-plugin-prisma-3.1.1.tgz#ddcb1f998ebe499bd691f6a477ab8719c65ecf7d"
-  integrity sha512-TKS/GbSHJ+uf/jTfqBqzRfWdXhrj4RHD6m5NEHj/2Brbd/I6PnNY7L6uXOiILOtRzx7fEjZEy6i4cUcwKUAfow==
+prettier-plugin-prisma@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-prisma/-/prettier-plugin-prisma-3.2.1.tgz#ba2046d72cec8d0010707c23d04e6ad0f5f48c92"
+  integrity sha512-fyowpkyD6IhYITaulT3MTtsIx88a0Nwo4F7r6AvP6gjCJoQYDkdWey5PJfD69jS3CRq2A+HfhWslqZEtnL6+UQ==
 
 prettier@2.4.1:
   version "2.4.1"
