@@ -4,6 +4,7 @@ CREATE TABLE "buddy_project_entry" (
     "buddy_id" TEXT,
     "matched_date" TIMESTAMPTZ(3),
     "reported_ghost_date" TIMESTAMPTZ(3),
+    "blocked" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "buddy_project_entry_pkey" PRIMARY KEY ("user_id")
 );
