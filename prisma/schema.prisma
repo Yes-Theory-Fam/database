@@ -1,6 +1,6 @@
 generator client {
-  provider        = "prisma-client-js"
-  binaryTargets   = ["native", "linux-musl", "darwin", "windows", "debian-openssl-1.1.x", "debian-openssl-1.1.x"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl", "darwin", "windows", "debian-openssl-1.1.x", "debian-openssl-1.1.x"]
 }
 
 generator typegraphql {
@@ -166,6 +166,13 @@ model TimedOutUsers {
   @@map(name: "timed_out_users")
 }
 
+model UsersOnBreak {
+  userId  String   @id @map("user_id") @db.VarChar
+  addedAt DateTime @default(now()) @map("created_at")
+
+  @@map(name: "users_on_break")
+}
+
 // The next section is for the curreny system.
 // All following models are core related to this.
 
@@ -179,9 +186,9 @@ model Activity {
   @@map(name: "activity")
 }
 
-model Currency{
+model Currency {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  userId    String   @map("user_id") @unique
+  userId    String   @unique @map("user_id")
   updatedAt DateTime @updatedAt @map("updated_at")
   createdAt DateTime @default(now()) @map("created_at")
   ammount   Int      @default(0) @map("ammount")
