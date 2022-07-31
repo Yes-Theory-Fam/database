@@ -1,3 +1,7 @@
+# Archived
+
+This project is archived. Both YesBot and YesTheory.Family take care of their own database definitions.
+
 # Database
 
 This project contains an NPM package used for accessing the central database
